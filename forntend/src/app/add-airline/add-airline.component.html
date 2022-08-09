@@ -1,0 +1,22 @@
+<p>add-airline works!</p>
+<form  [formGroup]="addAirlineForm" (ngSubmit)="AddAirline(addAirlineForm.value)">
+    <input class="form-control" formControlName="Name" placeholder="Name" name="Name"
+        required>
+    <br>
+
+    <input class="form-control" formControlName="Owner" placeholder="Owner" name="Owner"
+        required>
+    <br>
+
+
+    <input class="form-control" formControlName="Logo" placeholder="Logo" name="Logo" required>
+    <br>
+
+    <input class="form-control" formControlName="ContactNumber" placeholder="ContactNumber" name="ContactNumber" required>
+   <br>
+
+    <br>
+    <div class="btn-group" role="group" aria-label="Third group">
+        <button type="submit" class="btn btn-secondary">Save</button>
+    </div>
+</form>

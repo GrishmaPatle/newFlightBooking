@@ -1,0 +1,37 @@
+
+<h1>Ticket Booking</h1>
+<form  [formGroup]="TicketForm" (ngSubmit)="TicketBook(TicketForm.value)">
+    <input class="form-control" formControlName="PassengerName" placeholder="PassengerName" name="PassengerName"
+        required>
+    <br>
+
+    <input class="form-control" formControlName="PassengerEmail" placeholder="PassengerEmail" name="PassengerEmail"
+        required>
+    <br>
+
+
+    <input class="form-control" formControlName="Gender" placeholder="Gender" name="Gender" required>
+    <br>
+
+    <input class="form-control" formControlName="Age" placeholder="Age" name="Age" required>
+    <input class="form-control" formControlName="OptForMeal" placeholder="OptForMeal" name="OptForMeal" required>
+    <br>
+
+    <input class="form-control" formControlName="SeatNumber" placeholder="SeatNumber" name="SeatNumber" required>
+    <br>
+
+    <input class="form-control" formControlName="seatcost" placeholder="seatcost" name="seatcost" required>
+    <br>
+    <input class="form-control" formControlName="discount" placeholder="discount" name="discount" required>
+    <br>
+
+
+    <br>
+    <div class="btn-group" role="group" aria-label="Third group">
+        <button type="submit" class="btn btn-secondary">Book</button>
+    </div>
+</form>
+
+<div *ngIf="PNR > 0">
+<p>your ticket is booked and pnr is : {{PNR}}</p>
+</div>

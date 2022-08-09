@@ -1,0 +1,39 @@
+<style>
+  .login-box {
+    /* display: flex;  */
+    align-items: center;
+    justify-content: left;
+    /* text-align: left; */
+  }
+</style>
+
+<div style="text-align: left ;">
+ 
+    <br /><br />
+    <form class="border border-dark" [formGroup]="LoginForm" (ngSubmit)="login_click(LoginForm.value)">
+      <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Login</span>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="email" class="form-label">Login ID</label>
+      <input class="form-control" formControlName="Email"  placeholder="Email" name="Email" required>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col mb-3">
+        <label for="email" class="form-label">Password</label>
+      <input class="form-control" formControlName="Password" placeholder="Password" name="Password" required>
+    </div>
+  </div>
+      <div class="btn-group " role="group" aria-label="Third group">
+        <button type="submit" class="btn btn-secondary">Login</button>
+       
+      </div>
+  
+    </form>
+
+
+

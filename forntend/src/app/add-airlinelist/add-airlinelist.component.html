@@ -1,0 +1,24 @@
+<p>add-airlinelist works!</p>
+
+<table class="table ">
+    <thead class="thead table-dark">
+        <tr>
+            <th scope="col">Airline ID</th>
+            <th scope="col">Airline Name</th>
+            <th scope="col">Flight Owner</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let fl of arilines">
+            <th scope="row">{{fl.id }}</th>
+            <td>{{fl.name}}</td>
+            <td>{{fl.owner}}</td>
+            <td>{{fl.createdDate}}</td>
+            <td><button type="button" class="btn btn-success" (click) = "Delete(fl.id)">Block Airline</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

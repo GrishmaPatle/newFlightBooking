@@ -1,0 +1,54 @@
+<h1>Search Flight</h1>
+<form   [formGroup]="searchForm" (ngSubmit)="onSearchClick(searchForm.value)">
+    <div class="form-group">
+        <div class="input-group">     
+            <input class="form-control" formControlName="fromDate"  placeholder="fromDate" name="fromDate" required>
+            <input class="form-control" formControlName="toDate" placeholder="toDate" name="toDate" required>
+            <input class="form-control" formControlName="FromPlace" placeholder="FromPlace" name="FromPlace" required>
+            <input class="form-control" formControlName="ToPlace" placeholder="ToPlace" name="ToPlace" required>
+
+            
+        </div>
+    </div>
+    <br>
+            <div class="btn-group" role="group" aria-label="Third group">
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </div>
+</form>
+<br>
+<br>
+
+<table class="table ">
+    <thead class="thead table-dark">
+        <tr>
+            <th scope="col">Flight ID</th>
+            <th scope="col">Airline Name</th>
+            <th scope="col">Flight Name</th>
+            <th scope="col">startDate</th>
+            <th scope="col">EndDate</th>
+            <th scope="col">Scecduled Day</th>
+            <!-- <th scope="col">seatNumber</th>
+            <th scope="col">discount</th>
+            <th scope="col">totalCost</th> -->
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let fl of flights">
+            <th scope="row">{{fl.flightID }}</th>
+            <td>{{fl.airLineName}}</td>
+            <td>{{fl.flightName}}</td>
+            <td>{{fl.startDate}}</td>
+            <td>{{fl.endDate}}</td>
+            <td>{{fl.scheduledDays}}</td>
+            <!-- <td>{{fl.seatNumber}}</td>
+            <td>{{fl.discount}}</td>
+            <td>{{fl.totalCost}}</td> -->
+           
+            
+            <td><button type="button" class="btn btn-success" (click) = "onBooking(fl.flightID,fl.flightID)">Book</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

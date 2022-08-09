@@ -1,0 +1,49 @@
+<!-- As a heading -->
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-7 h1">Flight Booking</span>
+</nav>
+<br>
+
+
+
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button type="button" class="btn btn-success" (click)="getAllContacts()">Get All Contacts</button>
+
+    </div>
+
+</div>
+&nbsp;&nbsp;
+<hr>
+<br>
+<div class="input-group  mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">City Name</span>
+    </div>
+    <input #city type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+<div class="btn-group" role="group" aria-label="Third group">
+    <button type="button" class="btn btn-secondary" (click)="getContactByCity(city.value)">Get Contacts By City</button>
+</div>
+<br>
+<br>
+
+<table class="table ">
+    <thead class="thead table-dark">
+        <tr>
+            <th scope="col">Contact number</th>
+            <th scope="col">ContactName</th>
+            <th scope="col">City</th>
+            <th scope="col">CellNo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let contact of contactss">
+            <th scope="row">{{contact.contactNo }}</th>
+            <td>{{contact.contactName}}</td>
+            <td>{{contact.city}}</td>
+            <td>{{contact.cellNo}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+<p>add-flight works!</p>
+<p>add-airline works!</p>
+<form  [formGroup]="addFlightsForm" (ngSubmit)="AddFlight(addFlightsForm.value)">
+
+    <input class="form-control" formControlName="AirlineId" placeholder="AirlineId" name="AirlineId" required hidden>
+
+    <input class="form-control" formControlName="Name" placeholder="Name" name="Name" required>
+    <br>
+
+    <input class="form-control" formControlName="FlightNumber" placeholder="FlightNumber" name="FlightNumber" required>
+    <br>
+
+
+    <input class="form-control" formControlName="FromPlace" placeholder="FromPlace" name="FromPlace" required>
+    <br>
+
+    <input class="form-control" formControlName="ToPlace" placeholder="ToPlace" name="ToPlace" required>
+    <br>
+    <input class="form-control" formControlName="StartDateTime" placeholder="StartDateTime" name="StartDateTime"
+        required>
+    <br>
+
+    <input class="form-control" formControlName="EndDateTime" placeholder="EndDateTime" name="EndDateTime" required>
+    <br>
+
+
+    <input class="form-control" formControlName="ScheduledDays" placeholder="ScheduledDays" name="ScheduledDays"
+        required>
+    <br>
+
+    <input class="form-control" formControlName="InstumentUsed" placeholder="InstumentUsed" name="InstumentUsed"
+        required>
+    <br>
+    <input class="form-control" formControlName="TotalNumberOfBusinessClassSeats"
+        placeholder="TotalNumberOfBusinessClassSeats" name="TotalNumberOfBusinessClassSeats" required>
+    <br>
+
+    <input class="form-control" formControlName="TotalNumberOfNonBusinessClassSeats"
+        placeholder="TotalNumberOfNonBusinessClassSeats" name="TotalNumberOfNonBusinessClassSeats" required>
+    <br>
+
+
+    <input class="form-control" formControlName="CostOfBusinessClassSeats" placeholder="CostOfBusinessClassSeats"
+        name="CostOfBusinessClassSeats" required>
+    <br>
+
+    <input class="form-control" formControlName="CostOfNumberOfNonBusinessClassSeats"
+        placeholder="CostOfNumberOfNonBusinessClassSeats" name="CostOfNumberOfNonBusinessClassSeats" required>
+    <br>
+
+    <br>
+
+    <input class="form-control" formControlName="TotalCost" placeholder="TotalCost" name="TotalCost" required>
+    <br>
+    <br>
+
+    <input class="form-control" formControlName="NumberOfRows" placeholder="NumberOfRows" name="NumberOfRows" required>
+    <br>
+
+    <input class="form-control" formControlName="MealType" placeholder="MealType" name="MealType" required>
+    <br>
+
+    <br>
+    <div class="btn-group" role="group" aria-label="Third group">
+        <button type="submit" class="btn btn-secondary">Save</button>
+    </div>
+</form>

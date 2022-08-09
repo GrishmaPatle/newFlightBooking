@@ -1,0 +1,49 @@
+<h1>Get-By-Email</h1>
+<form [formGroup]="searchForm" (ngSubmit)="onSearchClick(searchForm.value)">
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" formControlName="emailid" placeholder="emailid" name="emailid" required>
+
+        </div>
+    </div>
+    <br>
+    <div class="btn-group" role="group" aria-label="Third group">
+        <button type="submit" class="btn btn-secondary">Search</button>
+    </div>
+
+    <table class="table ">
+        <thead class="thead table-dark">
+            <tr>
+                <th scope="col">airlineId</th>
+                <th scope="col">flightId</th>
+                <th scope="col">userId</th>
+                <th scope="col">passengerName</th>
+                <th scope="col">passengerEmail</th>
+                <th scope="col">gender</th>
+                <th scope="col">age</th>
+                <th scope="col">optForMeal</th>
+                <th scope="col">seatNumber</th>
+                <th scope="col">pnr</th>
+                <th scope="col">seatCost</th>
+                <th scope="col">discount</th>
+
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let fl of flights"> 
+                <th>{{fl.airlineId}}</th>
+                <td>{{fl.flightId}}</td>
+                <td>{{fl.userId}}</td>
+                <td>{{fl.passengerName}}</td>
+                <td>{{fl.passengerEmail}}</td>
+                <td>{{fl.gender}}</td>
+                <td>{{fl.age}}</td>
+                <td>{{fl.optForMeal}}</td>
+                <td>{{fl.seatNumber}}</td>
+                <td>{{fl.pnr}}</td>
+                <td>{{fl.seatCost}}</td>
+                <td>{{fl.discount}}</td>
+               
+            </tr> 
+        </tbody>
+    </table>

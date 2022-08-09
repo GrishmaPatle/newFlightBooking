@@ -1,0 +1,132 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmitted(registerForm.value)" class="border border-dark">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Register</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-2">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            <div class="form-text text-danger"
+                *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
+                First name is required.
+            </div>
+            <div class="form-text text-danger"
+                *ngIf="FirstName.errors?.['minlength'] && (FirstName.touched || FirstName.dirty)">
+                First name is too short.
+            </div>
+            <div class="form-text text-danger"
+                *ngIf="FirstName.errors?.['pattern'] && (FirstName.touched || FirstName.dirty)">
+                First name should start with Alphabet.
+            </div>
+        </div>
+        <div class="col mb-2">
+            <label for="lasttName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName">
+            <div class="form-text text-danger"
+                *ngIf="LastName.errors?.['required'] && LastName.touched || LastName.dirty">
+                Last name is required.</div>
+            <div class="form-text text-danger"
+                *ngIf="LastName.errors?.['minlength'] && (LastName.touched || LastName.dirty)">
+                First name is too short.
+            </div>
+            <div class="form-text text-danger"
+                *ngIf="LastName.errors?.['pattern'] && (LastName.touched || LastName.dirty)">
+                Last name should start with Alphabet.
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-2">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" form-control="email" formControlName="email">
+            <div class="form-text text-danger"
+                *ngIf="Emailaddress.errors?.['required'] && (Emailaddress.dirty || Emailaddress.touched)">
+                Email address is required.
+            </div>
+            <div class="form-text text-danger"
+                *ngIf="Emailaddress.errors?.['email'] && (Emailaddress.dirty || Emailaddress.touched)">
+                Email address is invalid.</div>
+        </div>
+
+        <div class="col mb-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" form-control="password"
+                formControlName="password">
+            <div class="form-text text-danger"
+                *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                Password is required.</div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="contactNumber" class="form-control" id="contactNumber" form-control="contactNumber"
+                    formControlName="contactNumber">
+               
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-2">
+                <label for="role" class="form-label">Role</label>
+                <input type="role" class="form-control" id="role" form-control="role" formControlName="role">
+                <div class="form-text text-danger" *ngIf="Role.errors?.['required'] && Role.touched || Role.dirty">
+                    Role is required.</div>
+            </div>
+            <div class="col">
+                <label for="age" class="form-label">Age</label>
+                <input type="age" class="form-control" id="age" form-control="age" formControlName="age">
+                <div class="form-text text-danger" *ngIf="Age.errors?.['required'] && Age.touched || Age.dirty">
+                    Age is required.</div>
+            </div>
+        </div>
+
+        <div class="col ps-3 mb-3">
+            <div class="m-1">Gender</div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="1" id="male" formControlName="gender">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="2" id="female" formControlName="gender">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="3" id="other" formControlName="gender">
+                <label class="form-check-label" for="other">Other</label>
+            </div>
+            <div class="form-text text-danger" *ngIf="Age.errors?.['required']">select gender</div>
+        </div>
+    </div>
+    <div class="col mb-2">
+        <label for="address1" class="form-label">Address1</label>
+        <input type="address1" class="form-control" id="address1" form-control="address1" formControlName="address1">
+        <div class="form-text text-danger" *ngIf="Address1.errors?.['required'] && Address1.touched || Address1.dirty">
+            Addres1 is required.</div>
+    </div>
+
+    <div class="col mb-2">
+        <label for="address2" class="form-label">Address2</label>
+        <input type="address2" class="form-control" id="address2" form-control="address2" formControlName="address2">
+        
+    </div>
+
+    <div class="col mb-2">
+        <label for="pincode" class="form-label">Pincode</label>
+        <input type="pincode" class="form-control" id="pincode" form-control="pincode" formControlName="pincode">
+        <div class="form-text text-danger" *ngIf="Pincode.errors?.['required'] && Pincode.touched || Pincode.dirty">
+            Pincode is required.</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+        </div>
+    </div>
+</form>
